@@ -67,7 +67,7 @@
 #define OPT_USAGE_DSH "\
 Usage: pdsh [-options] command ...\n\
 -S                return largest of remote command return values\n\
--k                fail fast on ssh failures or non-zero return code\n"
+-k                fail fast on connect failure or non-zero return code\n"
 
 /* -s option only useful on AIX */
 #if	HAVE_MAGIC_RSHELL_CLEANUP
