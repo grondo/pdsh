@@ -140,6 +140,7 @@ struct pdsh_module pdsh_module_info = {
 
 static int mod_slurm_init (void)
 {
+    slurm_init (NULL);
     return (0);
 }
 
@@ -193,6 +194,9 @@ mod_slurm_exit(void)
     if (constraint_list)
         list_destroy (constraint_list);
 
+    /* Disable: causes segfault in some environments.
+     * slurm_fini ();
+     */
     return (0);
 }
 
